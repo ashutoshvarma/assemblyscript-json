@@ -5,10 +5,10 @@ node_js:
 
 jobs:
   include:
-    - name: yarn
-      script:
-      - yarn test
-      - yarn docs
+    # - name: yarn
+    #   script:
+    #   - yarn test
+    #   - yarn docs
 
     # - name: fossa
     #   before_script:
