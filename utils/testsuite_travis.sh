@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 set -e
+set -x
 
 cd utils/testsuite_helper
 yarn && yarn build
@@ -12,4 +13,4 @@ cp build/index.wasm testsuite/parsers/test_as_json/index.wasm
 
 # run tests
 echo '["Assemblyscript-JSON"]' > filter.json 
-python3 testsuite/run_tests.py --filter=only.json 
+python3 testsuite/run_tests.py --filter=filter.json 
