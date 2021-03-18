@@ -22,9 +22,4 @@ jobs:
       before_script:
         - "curl https://wasmtime.dev/install.sh -sSf | bash"
       script:
-        - cd utils/testsuite_helper && yarn build
-        - git clone https://github.com/ashutoshvarma/JSONTestSuite.git testsuite
-        - rm testsuite/parsers/test_as_json/index.wasm
-        - cp build/index.wasm testsuite/parsers/test_as_json/index.wasm
-        - echo '["Assemblyscript-JSON"]' > filter.json 
-        - python3 run_tests.py --filter=only.json  
+        - bash utils/testsuite_travis.sh
